@@ -17,20 +17,20 @@ void main() {
     systemNavigationBarIconBrightness: Brightness.dark,
   ));
 
-  runApp(const NWT());
+  runApp(const App());
 }
 
-class NWT extends StatelessWidget {
-  const NWT({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'New World TV',
+      title: 'Credit Cards',
       theme: AppTheme.theme,
       home: HomePage(
-        title: 'Credit cards',
+        title: 'Credit Cards',
       ),
     );
   }

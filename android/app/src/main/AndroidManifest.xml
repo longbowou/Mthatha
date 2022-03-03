@@ -2,7 +2,7 @@
     package="com.nwt.nwt">
 
     <application
-        android:label="nwt_ease"
+        android:label="Credit Cards"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
