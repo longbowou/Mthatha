@@ -293,7 +293,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Padding(
                       padding: EdgeInsets.only(left: Get.width * 0.05),
                       child: AutoSizeText(
-                        "Kwamo Ntsugan Herman DORSOU",
+                        "Kwami Ntsugan Herman DORSOU",
                         style: AppTheme.body0.copyWith(color: AppTheme.nearlyWhite),
                         maxLines: 1,
                       )),
