@@ -1,6 +1,6 @@
 # Mthatha
 
-Credits Card Flutter project.
+Credit Cards Flutter project.
 
 ## Getting Started
 Build dependencies
