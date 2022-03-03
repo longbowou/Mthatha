@@ -89,76 +89,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           validFromYear: 16,
         ),
       ),
-      CreditCard(
-        cardBackground: SolidColorCardBackground(Colors.black.withOpacity(0.6)),
-        cardNetworkType: CardNetworkType.visaBasic,
-        cardHolderName: 'Ntsugan',
-        cardNumber: '1234 1234 1234 1234',
-        company: CardCompany.yesBank,
-        validity: Validity(
-          validThruMonth: 1,
-          validThruYear: 21,
-          validFromMonth: 1,
-          validFromYear: 16,
-        ),
-      ),
-      CreditCard(
-        cardBackground: SolidColorCardBackground(kRed.withOpacity(0.4)),
-        cardNetworkType: CardNetworkType.mastercard,
-        cardHolderName: 'Gursheesh Singh',
-        cardNumber: '2434 2434 **** ****',
-        company: CardCompany.kotak,
-        validity: Validity(
-          validThruMonth: 1,
-          validThruYear: 21,
-          validFromMonth: 1,
-          validFromYear: 16,
-        ),
-      ),
-      CreditCard(
-        cardBackground: GradientCardBackground(LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          colors: [kBlue, kPurple],
-          stops: const [0.3, 0.95],
-        )),
-        cardNetworkType: CardNetworkType.mastercard,
-        cardHolderName: 'Herman',
-        cardNumber: '4567',
-        company: CardCompany.sbiCard,
-        validity: Validity(
-          validThruMonth: 1,
-          validThruYear: 21,
-          validFromMonth: 1,
-          validFromYear: 16,
-        ),
-      ),
-      CreditCard(
-        cardBackground: ImageCardBackground(const AssetImage('assets/images/background_sample.jpg')),
-        cardNetworkType: CardNetworkType.mastercard,
-        cardHolderName: 'John Doe',
-        cardNumber: '2434 2434 **** ****',
-        company: CardCompany.virgin,
-        validity: Validity(
-          validThruMonth: 1,
-          validThruYear: 21,
-          validFromMonth: 1,
-          validFromYear: 16,
-        ),
-      ),
-      CreditCard(
-        cardBackground: SolidColorCardBackground(kPink.withOpacity(0.4)),
-        cardNetworkType: CardNetworkType.rupay,
-        cardHolderName: 'DORSOU',
-        cardNumber: '2434 2434 **** ****',
-        company: CardCompany.sbi,
-        validity: Validity(
-          validThruMonth: 1,
-          validThruYear: 21,
-          validFromMonth: 1,
-          validFromYear: 16,
-        ),
-      ),
     ];
 
     for (var i = 0; i < _creditCards.length; i++) {
@@ -310,35 +240,43 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 if (_scrollOffsetY >= _middleAreaHeight) {
                   _scrollOffsetY = 0;
                   _scrollOffsetY = (_scrollOffsetY / _middleAreaHeight).round() * _middleAreaHeight;
-                  setState(() {
-                    showIconUp = true;
-                  });
-                  Future.delayed(const Duration(milliseconds: 4500), () {
+                  if (_creditCards.length > 1) {
+                    setState(() {
+                      showIconUp = true;
+                    });
+                    Future.delayed(const Duration(milliseconds: 4500), () {
+                      setState(() {
+                        showIconUp = false;
+                      });
+                    });
+                  }
+                } else {
+                  if (_creditCards.length > 1) {
                     setState(() {
                       showIconUp = false;
                     });
-                  });
-                } else {
-                  setState(() {
-                    showIconDown = false;
-                  });
+                  }
                 }
 
                 if ((_scrollOffsetY.abs() / _middleAreaHeight) >= _creditCards.length) {
                   _scrollOffsetY = -1 * (_creditCards.length - 1) * _middleAreaHeight;
                   _scrollOffsetY = (_scrollOffsetY / _middleAreaHeight).round() * _middleAreaHeight;
-                  setState(() {
-                    showIconDown = true;
-                  });
-                  Future.delayed(const Duration(milliseconds: 4500), () {
+                  if (_creditCards.length > 1) {
+                    setState(() {
+                      showIconDown = true;
+                    });
+                    Future.delayed(const Duration(milliseconds: 4500), () {
+                      setState(() {
+                        showIconDown = false;
+                      });
+                    });
+                  }
+                } else {
+                  if (_creditCards.length > 1) {
                     setState(() {
                       showIconDown = false;
                     });
-                  });
-                } else {
-                  setState(() {
-                    showIconDown = false;
-                  });
+                  }
                 }
                 _updateCardsPositions(0);
               },
