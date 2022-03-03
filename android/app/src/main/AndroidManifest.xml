@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nwt.nwt">
+    package="com.credit.cards">
 
     <application
         android:label="Credit Cards"
