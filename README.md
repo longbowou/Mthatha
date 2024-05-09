@@ -23,3 +23,7 @@ https://www.flaticon.com/free-icon/android-logo_60754
 ```
 flutter pub run flutter_launcher_icons:main
 ```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
